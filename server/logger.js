@@ -6,7 +6,7 @@ const winston = require('winston')
 const path = require('path')
 
 // Configure custom app-wide logger
-module.exports = new winston.Logger({
+module.exports = new winston.createLogger({
   transports: [
     new (winston.transports.Console)(),
     new (winston.transports.File)({
