@@ -28,12 +28,13 @@ const htmlLoader = {
 }
 
 const webpackConfig = {
+  mode: 'production',
   entry: './app/main.js', // Start at app/main.js
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js' // Output to public/bundle.js
   },
-  module: { loaders: [ babelLoader, scssLoader, urlLoader, htmlLoader ] }
+  module: { rules: [ babelLoader, scssLoader, urlLoader, htmlLoader ] }
 }
 
 if (process.env.NODE_ENV === 'production') {

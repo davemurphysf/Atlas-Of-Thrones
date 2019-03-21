@@ -1,6 +1,6 @@
 {
   "name": "atlas-of-thrones",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "Game of Thrones interactive map, powered by Leaflet, PostGIS, and Redis.",
   "main": "index.js",
   "scripts": {
@@ -17,44 +17,43 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/triestpa/Atlas-Of-Thrones.git"
+    "url": "https://github.com/davemurphysf/Atlas-Of-Thrones.git"
   },
-  "license": {
-    "type": "Creative Commons Attribution-Non-Commercial-ShareAlike 3.0",
-    "url": "https://www.creativecommons.org/licenses/by-nc-sa/3.0/"
-  },
+  "license": "Creative Commons Attribution-Non-Commercial-ShareAlike 3.0, https://www.creativecommons.org/licenses/by-nc-sa/3.0/",
   "engines": {
-    "node": ">=7.6.0"
+    "node": ">=10.0.0"
   },
   "dependencies": {
-    "axios": "0.16.2",
-    "dotenv": "4.0.0",
-    "fuse.js": "3.0.5",
-    "ioredis": "3.1.4",
-    "joi": "10.6.0",
-    "kcors": "2.2.1",
-    "koa": "2.3.0",
+    "axios": "0.18.0",
+    "dotenv": "7.0.0",
+    "fuse.js": "3.4.4",
+    "ioredis": "4.6.2",
+    "joi": "14.3.1",
+    "kcors": "2.2.2",
+    "koa": "2.7.0",
     "koa-joi-validate": "0.5.1",
-    "koa-router": "7.2.1",
-    "leaflet": "1.2.0",
-    "pg": "7.2.0",
-    "winston": "2.3.1"
+    "koa-router": "7.4.0",
+    "leaflet": "1.4.0",
+    "pg": "7.9.0",
+    "winston": "3.2.1"
   },
   "devDependencies": {
-    "babel-loader": "7.1.2",
+    "@babel/core": "^7.4.0",
+    "babel-loader": "8.0.5",
     "babili-webpack-plugin": "0.1.2",
-    "css-loader": "0.28.5",
-    "eslint": "4.5.0",
-    "eslint-config-standard": "10.2.1",
-    "eslint-plugin-import": "2.7.0",
-    "eslint-plugin-node": "5.1.1",
-    "eslint-plugin-promise": "3.5.0",
-    "eslint-plugin-standard": "3.0.1",
-    "html-loader": "0.5.1",
-    "node-sass": "4.5.3",
-    "sass-loader": "6.0.6",
-    "style-loader": "0.18.2",
-    "url-loader": "0.5.9",
-    "webpack": "3.5.5"
+    "css-loader": "2.1.1",
+    "eslint": "5.15.3",
+    "eslint-config-standard": "12.0.0",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-node": "8.0.1",
+    "eslint-plugin-promise": "4.0.1",
+    "eslint-plugin-standard": "4.0.0",
+    "html-loader": "0.5.5",
+    "node-sass": "4.11.0",
+    "sass-loader": "7.1.0",
+    "style-loader": "0.23.1",
+    "url-loader": "1.1.2",
+    "webpack": "4.29.6",
+    "webpack-cli": "^3.3.0"
   }
 }
