@@ -1,5 +1,5 @@
 const path = require('path')
-const BabiliPlugin = require('babili-webpack-plugin')
+const MinifyPlugin = require('babel-minify-webpack-plugin')
 
 // Babel loader for Transpiling ES8 Javascript for browser usage
 const babelLoader = {
@@ -39,7 +39,7 @@ const webpackConfig = {
 
 if (process.env.NODE_ENV === 'production') {
   // Minify for production build
-  webpackConfig.plugins = [ new BabiliPlugin({}) ]
+  webpackConfig.plugins = [ new MinifyPlugin({}, {}) ]
 } else {
   // Generate sourcemaps for dev build
   webpackConfig.devtool = 'eval-source-map'
