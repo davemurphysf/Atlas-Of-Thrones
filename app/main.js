@@ -16,11 +16,13 @@ class ViewController {
 
     this.searchService = new SearchService() // Initialize search service
 
+    console.log(`process.env.API_ADDRESS = ${process.env.API_ADDRESS}`);
+
     // Initialize API service
     if (window.location.hostname === 'localhost') {
       this.api = new ApiService('http://localhost:5000/')
     } else {
-      this.api = new ApiService('https://api.atlasofthrones.com/')
+      this.api = new ApiService(process.env.API_ADDRESS || 'https://api.atlasofthrones.com/')
     }
 
     this.locationPointTypes = [ 'castle', 'city', 'town', 'ruin', 'region', 'landmark' ]

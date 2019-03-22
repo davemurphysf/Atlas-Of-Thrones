@@ -1,5 +1,6 @@
 const path = require('path')
 const MinifyPlugin = require('babel-minify-webpack-plugin')
+const webpack = require('webpack')
 
 // Babel loader for Transpiling ES8 Javascript for browser usage
 const babelLoader = {
@@ -27,22 +28,23 @@ const htmlLoader = {
   loader: 'html-loader'
 }
 
-const webpackConfig = {
-  mode: 'production',
-  entry: './app/main.js', // Start at app/main.js
-  output: {
-    path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.js' // Output to public/bundle.js
-  },
-  module: { rules: [ babelLoader, scssLoader, urlLoader, htmlLoader ] }
-}
 
-if (process.env.NODE_ENV === 'production') {
-  // Minify for production build
-  webpackConfig.plugins = [ new MinifyPlugin({}, {}) ]
-} else {
-  // Generate sourcemaps for dev build
-  webpackConfig.devtool = 'eval-source-map'
-}
+module.exports = env => {
+  const plugins = [new webpack.EnvironmentPlugin(['NODE_ENV', 'API_ADDRESS'])]
+  
+  if (process.env.NODE_ENV === 'production') {
+    plugins.push(new MinifyPlugin({}, {}));
+  }
 
-module.exports = webpackConfig
+  return {
+    mode: 'production',
+    entry: './app/main.js', // Start at app/main.js
+    output: {
+      path: path.resolve(__dirname, 'public'),
+      filename: 'bundle.js' // Output to public/bundle.js
+    },
+    module: { rules: [ babelLoader, scssLoader, urlLoader, htmlLoader ] },
+    plugins: plugins,
+    devtool: process.env.NODE_ENV === 'production' ? undefined: 'eval-source-map'
+  }
+}
