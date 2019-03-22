@@ -6,7 +6,7 @@ const babelLoader = {
   test: /\.js$/,
   loader: 'babel-loader',
   include: [path.resolve(__dirname, '../app')],
-  query: { presets: ['es2017'] }
+  query: { presets: ['@babel/preset-env'] }
 }
 
 // SCSS loader for transpiling SCSS files to CSS
